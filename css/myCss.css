@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+nav{
+  border: 5px solid;
+  border-color: rgb(73, 45, 147)
+}
+
+.block{
+  margin: auto;
+
+  background-color:#e73636;
+  width: 200px;
+  height: 200px;
+  font-size:3em;
+  text-align: center;
+  line-height: 200px;
+  border-radius: 30px;
+  box-shadow: 3px 3px 4px 3px rgb(93, 74, 14);
+}
