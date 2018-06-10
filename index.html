@@ -7,37 +7,111 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>水质检测</title>
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/justified-nav.css">
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 </head>
-
-<body>
-  <nav class=main-navigation>
-    <div class=container>
-      <div class=row>
-        <div class=col-sm-12>
-          <div class=navbar-header>
-            <span class="nav-toggle-button collapsed" data-toggle=collapse data-target=#main-menu><span class=sr-only>Toggle navigation</span>
-            <i class="fa fa-bars"></i>
-            </span>
-          </div>
-          <div class="collapse navbar-collapse" id=main-menu>
-            <ul class=menu>
-              <li role=presentation><a href=/ title=首页>首页</a></li>
-              <li role=presentation><a href=# title="Laravel 中文文档" onclick="_hmt.push(['_trackEvent', 'main-navigation', 'click', 'Laravel 中文文档'])">Laravel 中文文档</a></li>
-              <li role=presentation style="font-weight: bold"><a href=# title="Packagist 中国镜像" onclick="_hmt.push(['_trackEvent', 'main-navigation', 'click', 'Packagist 中国镜像'])">Packagist 中国镜像</a></li>
-              <li role=presentation><a href=# title="Composer 中文文档" onclick="_hmt.push(['_trackEvent', 'main-navigation', 'click', 'Composer 中文文档'])">Composer 中文文档</a></li>
-              <li role=presentation><a href=# title="PHP 中文手册" onclick="_hmt.push(['_trackEvent', 'main-navigation', 'click', 'PHP 中文手册'])">PHP 中文手册</a></li>
-              <li role=presentation><a href=# title="PHP 编程之道" onclick="_hmt.push(['_trackEvent', 'main-navigation', 'click', 'PHP 编程之道'])">PHP 编程之道</a></li>
-              <li role=presentation><a href=# title=问答社区 onclick="_hmt.push(['_trackEvent', 'main-navigation', 'click', '问答社区'])">问答社区</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
+<div class="container">
+  <div class="head">
+    <!-- 头部 包括设置logo和设置按钮 -->
+    <div class="logo">
+      LOGO
     </div>
+    <button type="button" class="btn btn-default btn-lg settingBtn">
+        设置
+      </button>
+  </div>
+  <hr class="hr" style=" margin-bottom: -3px;  top: -10px;">
+  <!-- 导航栏 -->
+  <nav>
+    <ul class="nav  nav-justified">
+      <li class="active"><a href="#">首页</a></li>
+      <li><a href="#">生产车间和仓库温湿度</a></li>
+      <li><a href="#">生产设备和耗材更换数据</a></li>
+      <li><a href="#">微生物污染和化学污染数据分析</a></li>
+    </ul>
   </nav>
+  <!-- 图片 -->
+  <div class="bgimg">
+  </div>
+  <hr class="hr" style="margin:3px 0px 3px 0px;">
+  <!-- 操作界面 -->
+  <div class="operationArea row">
+    <div class="real-time col-md-3">
+      <h3>实时数据</h3>
+      <h4>水源水质项目：</h4>
+      <div class="sourceData" id="WaterSource">
+        <hr class="hr2">
+        <ul class="list-group">
+          <li v-for="todo in todos" class="list-group-item">
+            {{todo.text}}
+          </li>
+        </ul>
+      </div>
 
-  <script src="js/jquery.min.js"></script>
-  <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
-  <script src="js/bootstrap.min.js"></script>
+      <h4>罐装前成品水：</h4>
+      <div class="sourceData" id="BeforeFilling">
+        <hr class="hr2">
+        <ul class="list-group">
+          <li v-for="todo in todos" class="list-group-item">
+            {{todo.text}}
+          </li>
+        </ul>
+      </div>
+      <button type="button" class="btn btn-primary btn-lg thresholdBtn">
+        设置阈值
+      </button>
+    </div>
+
+    <!-- 右侧区域 -->
+    <div class="chartArea col-md-9">
+      <h3>数据查询</h3>
+      <div id="datePicker">
+        <template>
+        <el-date-picker
+            v-model="value7"
+            type="daterange"
+            align="right"
+            unlink-panels="true"
+            range-separator="-"
+            size="large"
+            start-placeholder="开始日期"
+            end-placeholder="结束日期"
+            :picker-options="pickerOptions2">
+        </el-date-picker>
+        </template>
+        </div>
+        <div id="itemPicker">
+        <template>
+        <el-select v-model="value" placeholder="项目">
+          <el-option
+            v-for="item in options"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value">
+          </el-option>
+        </el-select>
+        </template>
+        </div>
+        <button type="button" class="btn btn-primary" style="margin-top:10px;margin-left:30px;width:217px;">
+          查询
+        </button>
+        <button type="button" class="btn btn-link" style="float:right;margin-top:15px">
+          查看更多
+        </button>
+        <hr class="hr2" style="margin-top:10px;">
+    </div>
+  </div>
+</div>
+
+
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="js/myjs.js"></script>
 </body>
 
 </html>

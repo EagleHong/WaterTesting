@@ -1,0 +1,106 @@
+.head{
+  height: 120px;
+  background-color:rgb(42, 151, 205);
+}
+
+.logo{
+  margin-left:30px;
+  height: 150px;
+  line-height: 150px;
+  font-size: 250%;
+  font-weight: bold;
+  color: white;
+  display: inline-block;
+}
+
+.settingBtn{
+  display: inline-block;
+  float: right;
+  height: 30px;
+  width: 50px;
+  margin: 15px 15px 0px 0px;
+  font-size: 50%;
+  line-height: 30px;
+  padding: 0px;
+}
+
+.thresholdBtn{
+  display: inline-block;
+  height: 30px;
+  width: 80px;
+  margin-bottom: 20px;
+  font-size: 50%;
+  line-height: 30px;
+  padding: 0px;
+}
+
+/* 较粗 */
+.hr{
+  border-color: black;
+  position: relative;
+  border-width: 3px;
+  margin: 0px;
+}
+/* 较细 */
+.hr2{
+  border-color: black;
+  position: relative;
+  border-width: 1px;
+  margin: 0px 0 8px 0;
+}
+
+.bgimg{
+  height: 220px;
+  width: 100%;
+  background-image: url("../images/homepageImg.jpg");
+  background-size: 100% 100%;
+}
+
+.operationArea{
+  background-color: rgba(0,0,0,0.08);
+  height: auto;
+  margin: 0px;
+}
+
+.real-time{
+  height: auto;
+  border-style: solid;
+  border-width: thin;
+  border-left: 1px;
+  border-top: 1px;
+  border-bottom: 1px;
+  border-color: black;
+}
+
+.chartArea{
+
+  height: 800px;
+}
+
+h3{
+  margin-top:8px;
+  font-weight:bold
+}
+
+h4{
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.sourceData{
+  margin-top: 15px;
+}
+
+.list-group > li:hover{
+  background-color: rgba(0,0,0,0.08);
+}
+
+#datePicker{
+  margin-left: 30px;
+}
+
+#itemPicker{
+  margin-top: 10px;
+  margin-left: 30px;
+  display: block;
+}
