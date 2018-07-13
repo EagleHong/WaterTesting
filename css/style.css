@@ -24,6 +24,11 @@
   padding: 0px;
 }
 
+.container-btn{
+  position:relative;
+  height:20px;
+}
+
 .thresholdBtn{
   display: inline-block;
   height: 30px;
@@ -32,6 +37,24 @@
   font-size: 50%;
   line-height: 30px;
   padding: 0px;
+}
+
+.rightBtn{
+  height: 30px;
+  width: 80px;
+  position: absolute;
+  right: 0px;
+  margin-bottom: 20px;
+  font-size: 50%;
+  line-height: 30px;
+  padding: 0px;
+}
+
+.wideBtn{
+  margin-top: 40px;
+  width: 100%;
+  font-size: 120%;
+  padding: 5px;
 }
 
 /* 较粗 */
@@ -49,6 +72,17 @@
   margin: 0px 0 8px 0;
 }
 
+.hr3{/*渐变*/
+  position: relative;
+  border-width: 3px;
+  border-color: #1b7bc9;
+  border:5px solid transparent;
+  border-radius: 5px;
+	background-clip:padding-box,border-box;
+	background-origin:padding-box,border-box;
+	background-image:linear-gradient(90deg,#fff,#fff),linear-gradient(90deg,#5c5fa5,#893f60);
+}
+
 .bgimg{
   height: 220px;
   width: 100%;
@@ -57,7 +91,7 @@
 }
 
 .operationArea{
-  background-color: rgba(0,0,0,0.08);
+  background-color: rgba(0,0,0,0.05);
   height: auto;
   margin: 0px;
 }
@@ -91,8 +125,9 @@ h4{
   margin-top: 15px;
 }
 
-.list-group > li:hover{
+.list-group > .haslink:hover{
   background-color: rgba(0,0,0,0.08);
+  cursor: pointer;
 }
 
 #datePicker{
@@ -103,4 +138,12 @@ h4{
   margin-top: 10px;
   margin-left: 30px;
   display: block;
+}
+
+.bottom-blank{
+  margin-bottom: 20px;
+}
+
+.fillingbox{
+  height: 60px;
 }

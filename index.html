@@ -25,9 +25,10 @@
   <!-- 导航栏 -->
   <nav>
     <ul class="nav  nav-justified">
-      <li class="active"><a href="#">首页</a></li>
-      <li><a href="#">生产车间和仓库温湿度</a></li>
-      <li><a href="#">生产设备和耗材更换数据</a></li>
+      <li class="active"><a href="index.html">首页</a></li>
+      <li><a href="workshop.html">生产车间和仓库温湿度</a></li>
+      <li><a href="#">实验检验数据</a></li>
+      <li><a href="equiment.html">生产设备和耗材更换数据</a></li>
       <li><a href="#">微生物污染和化学污染数据分析</a></li>
     </ul>
   </nav>
@@ -37,13 +38,14 @@
   <hr class="hr" style="margin:3px 0px 3px 0px;">
   <!-- 操作界面 -->
   <div class="operationArea row">
+    <!-- 左侧区域 -->
     <div class="real-time col-md-3">
       <h3>实时数据</h3>
       <h4>水源水质项目：</h4>
       <div class="sourceData" id="WaterSource">
         <hr class="hr2">
         <ul class="list-group">
-          <li v-for="todo in todos" class="list-group-item">
+          <li v-for="todo in todos" class="list-group-item haslink" style="padding:7px 15px;">
             {{todo.text}}
           </li>
         </ul>
@@ -53,7 +55,7 @@
       <div class="sourceData" id="BeforeFilling">
         <hr class="hr2">
         <ul class="list-group">
-          <li v-for="todo in todos" class="list-group-item">
+          <li v-for="todo in todos" class="list-group-item haslink" style="padding:7px 15px;">
             {{todo.text}}
           </li>
         </ul>
@@ -99,7 +101,8 @@
         <button type="button" class="btn btn-link" style="float:right;margin-top:15px">
           查看更多
         </button>
-        <hr class="hr2" style="margin-top:10px;">
+        <hr class="hr3">
+
     </div>
   </div>
 </div>

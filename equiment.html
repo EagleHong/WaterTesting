@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>水质检测</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/justified-nav.css">
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+</head>
+<div class="container">
+  <div class="head">
+    <!-- 头部 包括设置logo和设置按钮 -->
+    <div class="logo">
+      LOGO
+    </div>
+    <button type="button" class="btn btn-default btn-lg settingBtn">
+        设置
+      </button>
+  </div>
+  <hr class="hr" style=" margin-bottom: -3px;  top: -10px;">
+  <!-- 导航栏 -->
+  <nav>
+    <ul class="nav  nav-justified">
+      <li><a href="index.html">首页</a></li>
+      <li><a href="workshop.html">生产车间和仓库温湿度</a></li>
+      <li><a href="#">实验检验数据</a></li>
+      <li class="active"><a href="equiment.html">生产设备和耗材更换数据</a></li>
+      <li><a href="#">微生物污染和化学污染数据分析</a></li>
+    </ul>
+  </nav>
+  <hr class="hr3">
+  <!-- 操作界面 -->
+  <div class="operationArea row" style="margin-top:20px;">
+    <!-- 左侧区域 -->
+    <div class="real-time col-md-3" style="margin-top:10px;">
+      <h4>生产设备</h4>
+      <div class="sourceData">
+        <hr class="hr2">
+        <div class="bottom-blank" id="equimentPicker">
+          <template>
+            <el-select v-model="value" filterable placeholder="请选择设备名称">
+              <el-option
+                v-for="item in options"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value">
+              </el-option>
+            </el-select>
+          </template>
+        </div>
+
+      </div>
+
+      <h4>重要耗材</h4>
+      <div class="sourceData">
+        <hr class="hr2">
+        <div class="bottom-blank" id="materialPicker">
+          <template>
+            <el-select v-model="value" filterable placeholder="请选择材料名称">
+              <el-option
+                v-for="item in options"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value">
+              </el-option>
+            </el-select>
+          </template>
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary btn-lg wideBtn">
+          录入数据
+      </button>
+      <button type="button" class="btn btn-primary btn-lg wideBtn">
+          当日流水数据
+      </button>
+      <div class="fillingbox"> </div>
+    </div>
+
+    <!-- 右侧区域 -->
+    <div class="chartArea col-md-9">
+      <h3>数据查询</h3>
+      <div id="datePicker">
+        <template>
+          <el-date-picker
+              v-model="value7"
+              type="daterange"
+              align="right"
+              unlink-panels="true"
+              range-separator="-"
+              size="large"
+              start-placeholder="开始日期"
+              end-placeholder="结束日期"
+              :picker-options="pickerOptions2">
+          </el-date-picker>
+          </template>
+      </div>
+      <div id="itemPicker">
+        <template>
+          <el-select v-model="value" filterable placeholder="项目">
+            <el-option
+              v-for="item in options"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+            </el-option>
+          </el-select>
+          </template>
+      </div>
+      <button type="button" class="btn btn-primary" style="margin-top:10px;margin-left:30px;width:217px;">
+            查询
+      </button>
+
+      <hr class="hr3">
+      <div id="table">
+        <template>
+        <el-table
+          :data="tableData"
+          border
+          stripe
+          height="500"
+          style="width: 100%">
+            <el-table-column
+              fixed
+              prop="date"
+              label="日期"
+              width="150">
+            </el-table-column>
+            <el-table-column
+              prop="name"
+              label="操作人"
+              width="120">
+            </el-table-column>
+            <el-table-column
+              prop="item"
+              label="操作项目"
+              width="120">
+            </el-table-column>
+            <el-table-column
+              prop="operation"
+              label="操作"
+              width="120">
+            </el-table-column>
+            <el-table-column
+              prop="address"
+              label="地点"
+              width="200">
+            </el-table-column>
+            <el-table-column
+              prop="total"
+              label="总量"
+              width="80">
+            </el-table-column>
+        </el-table>
+        </template>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="js/myjs_equiment.js"></script>
+</body>
+
+</html>
